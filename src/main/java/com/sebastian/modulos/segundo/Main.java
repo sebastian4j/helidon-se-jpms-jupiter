@@ -5,6 +5,7 @@ import io.helidon.common.http.MediaType;
 import io.helidon.webserver.Routing;
 import io.helidon.webserver.ServerConfiguration;
 import io.helidon.webserver.WebServer;
+import io.helidon.webserver.json.JsonSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,6 +19,7 @@ public class Main {
 
   public static Routing crearRutas() {
     return Routing.builder()
+            .register(JsonSupport.get())
             .register("/api", new Recursos())
             .post("/shutdown", (req, res) -> {
               res.headers().contentType(MediaType.TEXT_PLAIN.withCharset("UTF-8"));

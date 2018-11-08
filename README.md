@@ -1,5 +1,5 @@
 # Java, Módulos y Microservicios
-Este repositorio contiene un servicio que responde a /api con un mensaje de saludo utilizando **maven, helidon se, jpms, jsonb, junit jupiter y docker** para construir la imagen final.
+Este repositorio contiene un servicio que responde a /api con un mensaje de saludo utilizando **maven, helidon se, jpms, ~~jsonb~~, junit jupiter y docker** para construir la imagen final.
 
 ## Requisitos
 

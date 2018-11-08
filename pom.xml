@@ -9,7 +9,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <helidon.version>0.10.5</helidon.version>
+        <helidon.version>0.10.4</helidon.version>
         <libs.classpath.prefix>libs</libs.classpath.prefix>
         <mainClass>com.sebastian.modulos.segundo.Main</mainClass>
         <copied.libs.dir>${project.build.directory}/${libs.classpath.prefix}</copied.libs.dir>
@@ -143,7 +143,13 @@
             <groupId>io.helidon.webserver</groupId>
             <artifactId>helidon-webserver-netty</artifactId>
             <version>${helidon.version}</version>
-        </dependency>        
+        </dependency>
+        <dependency>
+            <groupId>io.helidon.webserver</groupId>
+            <artifactId>helidon-webserver-json</artifactId>
+            <version>${helidon.version}</version>
+        </dependency>
+        <!-- -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -161,27 +167,6 @@
             <artifactId>helidon-webserver-test-support</artifactId>
             <version>${helidon.version}</version>
             <scope>test</scope>
-        </dependency>
-        <!-- json -->
-        <dependency>
-            <groupId>org.eclipse</groupId>
-            <artifactId>yasson</artifactId>
-            <version>1.0.2</version>
-        </dependency>        
-        <dependency>
-            <groupId>javax.json.bind</groupId>
-            <artifactId>javax.json.bind-api</artifactId>
-            <version>1.0</version>
-        </dependency>        
-        <dependency>
-            <groupId>org.glassfish</groupId>
-            <artifactId>javax.json</artifactId>
-            <version>1.1.3</version>
-        </dependency>        
-        <dependency>
-            <groupId>javax.json</groupId>
-            <artifactId>javax.json-api</artifactId>
-            <version>1.1.3</version>
-        </dependency>
+        </dependency>                
     </dependencies>
 </project>

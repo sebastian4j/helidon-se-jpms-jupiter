@@ -5,7 +5,6 @@ import io.helidon.webserver.WebServer;
 import io.helidon.webserver.testsupport.TestClient;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
-import javax.json.bind.JsonbBuilder;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
@@ -34,8 +33,7 @@ public class MainTest {
             .path("/api")
             .get();
     assertEquals(Http.Status.OK_200, response.status());
-    var recibido = JsonbBuilder.create().fromJson(response.asString().get(), Saludo.class);
-    assertTrue(recibido.getMensaje().equals("hola"));
+    assertTrue(response.asString().get().equals("{\"mensaje\":\"hola\"}"));
   }
 
 }

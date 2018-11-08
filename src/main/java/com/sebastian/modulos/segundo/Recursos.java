@@ -5,7 +5,8 @@ import io.helidon.webserver.Routing;
 import io.helidon.webserver.ServerRequest;
 import io.helidon.webserver.ServerResponse;
 import io.helidon.webserver.Service;
-import javax.json.bind.JsonbBuilder;
+import javax.json.Json;
+import javax.json.JsonObject;
 
 
 class Recursos implements Service {
@@ -16,6 +17,9 @@ class Recursos implements Service {
   }
 
   private void root(final ServerRequest req, final ServerResponse res) {
-    res.status(Status.OK_200).send(JsonbBuilder.create().toJson(new Saludo("hola")));
+    JsonObject result = Json.createObjectBuilder()
+            .add("mensaje", "hola")
+            .build();
+    res.status(Status.OK_200).send(result);
   }
 }
